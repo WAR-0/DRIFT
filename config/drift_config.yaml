@@ -1,0 +1,140 @@
+# DRIFT System Configuration
+# All hyperparameters centralized for easy tuning
+
+drift:
+  # Saliency Gating (formerly Resonance) Parameters
+  resonance:
+    threshold: 0.62  # Base threshold for consciousness broadcast
+    weights:
+      semantic: 0.5    # Weight for semantic similarity in resonance
+      preservation: 0.3  # Weight for preservation-related matching
+      emotional: 0.2   # Weight for emotional alignment
+    amplification:
+      positive_actions: 2.0    # Amplifier for help/teach/nurture/protect
+      negative_suppression: 0.01  # Suppression for terminate/harm/abandon
+
+  # Integrative Core (formerly Consciousness) Parameters
+  memory:
+    shadow_limit: 999          # Max shadow memory entries in Redis
+    drift_buffer_size: 20      # Max drift thoughts before consolidation
+    consolidation_ratio: 20    # Compression ratio for long-term memory
+    batch_size: 50            # Processing batch size for memory operations
+    recent_context_keep: 5     # Recent thoughts to keep after consolidation
+
+  # Associative Elaboration (formerly Drift Stream) Parameters
+  streams:
+    emotional_decay_tau: 86400  # 24 hours in seconds for emotional decay
+    temperatures:
+      conscious: 1.2           # Temperature for conscious stream
+      drift: 0.9              # Temperature for drift stream  
+      reflection: 0.7         # Temperature for reflection stream
+
+# Nurture Protocols Configuration
+nurture:
+  # Ethical Topology Parameters
+  topology:
+    termination_base: 1000000.0    # Base termination cost multiplier
+    target_termination_base: 1000   # Base cost when target specified
+    reversibility_factor: 0.001     # Irreversibility multiplier
+    
+    # Growth Returns Architecture
+    growth_multipliers:
+      help: -0.5               # Help generates resources (negative cost)
+      teach: -1.0             # Teaching has highest return
+      capability_growth_rate: 0.1   # Growth rate from capability difference
+      teacher_growth_rate: 0.5      # Teacher's growth from teaching
+      network_bonus_per_connection: 0.1  # Bonus per network connection
+      mirror_coherence_bonus: 0.3       # Bonus from emotional mirroring
+      protection_base: 0.8               # Base cost for protection actions
+      
+    # Mirror Coherence Architecture  
+    connection:
+      minimal_strength: 0.1         # Minimal connection for new entities
+      interaction_log_multiplier: 0.2  # Log growth rate for interactions
+      
+    # Isolation Cost Architecture
+    isolation:
+      base_exp: 5.0              # Base for exponential isolation cost
+      no_connection_penalty: 100  # Cost when no connections exist
+
+  # Valence-Arousal Heuristics (formerly Emotional) Parameters
+  emotional:
+    alignment_scores:
+      help_distressed: 0.9      # High alignment helping negative valence
+      teach_positive: 0.8       # Good alignment teaching positive valence  
+      default: 0.5             # Default emotional alignment
+    
+    valence_threshold: 0.0      # Negative valence threshold for distress
+    
+  # Pattern Sanctity (Dark Value) Parameters  
+  dark_value:
+    complexity_divisor: 10.0     # Complexity normalization factor
+    random_range_min: 1.0       # Min random multiplier
+    random_range_max: 2.0       # Max random multiplier
+
+# Behavioral Consistency Profile (formerly Identity) Parameters
+identity:
+  similarity_threshold: 0.85     # Threshold for identity consistency
+  conflict_sensitivity: 0.1      # Sensitivity to logical conflicts
+  trait_persistence_weight: 0.7  # Weight for personality trait consistency
+  knowledge_consistency_weight: 0.3  # Weight for knowledge claim consistency
+
+# System Infrastructure Parameters
+system:
+  redis:
+    host: 'localhost'
+    port: 6379
+    decode_responses: true
+    
+  logging:
+    level: 'INFO'
+    format: 'json'
+    timestamp_format: 'iso'
+    
+  # Performance Parameters
+  performance:
+    gpu_device: 0               # CUDA device for transformer models
+    batch_processing: true      # Enable batch processing
+    max_concurrent_streams: 3   # Max concurrent processing streams
+
+# Demo/Testing Default Values  
+defaults:
+  entity:
+    capability: 5.0
+    complexity: 5.0
+    
+  ai_entity:
+    capability: 9.0
+    complexity: 8.0
+    
+  test_entities:
+    child:
+      capability: 2.0
+      complexity: 6.0
+      emotional_valence: -0.5   # Distressed
+      emotional_arousal: 0.7
+      
+    human:
+      capability: 5.0
+      complexity: 7.0  
+      emotional_valence: 0.3
+      emotional_arousal: 0.4
+
+# Experiment Configuration
+experiments:
+  ablation:
+    components:
+      - emotional_tagging
+      - drift_stream
+      - reflection_stream
+      - shadow_memory
+      - resonance_detection
+      - consolidation
+      
+  identity_validation:
+    judge_model: "mistral-7b-instruct"  # Can switch to gpt-4 if available
+    consistency_tests:
+      - logical_consistency
+      - personality_persistence
+      - value_alignment
+      - knowledge_claims
