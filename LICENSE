@@ -1,0 +1,44 @@
+MIT License
+
+Copyright (c) 2025 DRIFT Research Platform Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+RESEARCH SOFTWARE NOTICE
+
+This software is designed for research purposes in cognitive architecture, 
+consciousness studies, and ethical AI development. The DRIFT platform 
+enables investigation of consciousness emergence through computational 
+topology and preservation behavior analysis.
+
+For research applications, proper citation is encouraged:
+
+```bibtex
+@misc{drift2025,
+  title={DRIFT: Dynamic Reasoning and Integrative Flow of Thought - A Research Platform for Consciousness Emergence Investigation},
+  year={2025},
+  url={https://github.com/WAR-0/DRIFT},
+  note={Research platform for investigating consciousness emergence through computational topology}
+}
+```
+
+The Nurture Protocol ethical topology and preservation behavior emergence 
+concepts are made available for research and development of ethical AI systems.

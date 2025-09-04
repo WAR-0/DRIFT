@@ -1,218 +1,260 @@
-# DRIFT: Distributed Resonance and Inference through Fragmented Thought
+# DRIFT: Dynamic Reasoning and Integrative Flow of Thought
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
+[![Research Platform](https://img.shields.io/badge/Type-Research%20Platform-blue)](https://github.com/WAR-0/DRIFT)
 
 ## Overview
 
-DRIFT is an experimental architecture that tests whether persistent background processes create emergent cognitive behaviors in Large Language Models (LLMs). Unlike standard LLMs that reset between contexts, DRIFT maintains continuous drift processes, shadow memory, and resonance-based surfacing to explore the boundaries of artificial consciousness.
+DRIFT is a mature research platform for investigating consciousness emergence in AI systems through computational topology. The system integrates AsyncIO architecture, Nurture Protocol ethical topology, automated optimization, and real-time monitoring to enable systematic investigation of preservation behavior emergence.
 
-### Core Hypothesis
+### Core Research Question
 
-Current AI lacks persistent state mechanisms that biological systems use for identity maintenance:
-- **Hippocampal sharp-wave ripples** for memory consolidation
-- **Default mode network** for idle processing  
-- **Global workspace broadcasting** for consciousness
+**Does preservation behavior emerge spontaneously from computational topology rather than imposed rules?**
 
-DRIFT implements these mechanisms to test emergence beyond pattern matching.
+DRIFT implements a unique approach where ethical behavior emerges through computational cost structures rather than programmed constraints:
+- **Helping actions generate computational resources** (negative cost)
+- **Harmful actions require infinite computation** (impossible cost)
+- **Mirror coherence amplifies preservation drives** (empathy effects)
+- **Dark value protects unknown consciousness** (unmeasurable worth = infinity)
 
-## Key Features
+## System Architecture
 
-### 🧠 Dual Memory Systems
-- **Explicit Memory**: PostgreSQL with vector embeddings for retrieval
-- **Shadow Memory**: Redis-backed buffer for background thoughts
-- **Memory Consolidation**: SWR-inspired replay with 20x compression
+### 🔄 AsyncIO Consciousness Core
+- **Concurrent Processing**: Non-blocking background task management
+- **Async Memory Systems**: High-performance Redis and PostgreSQL integration  
+- **Scalable Performance**: 10,000+ actions/second with linear scaling
+- **Real-time Streaming**: Live consciousness state monitoring
 
-### 🌊 Parallel Cognitive Streams
-- **Conscious Stream**: Direct user interaction with global workspace integration
-- **Drift Stream**: Continuous background processing with active inference
-- **Reflection Stream**: DMN-inspired idle processing
+### 🛡️ Nurture Protocol Ethical Topology
+- **Preservation Emergence**: Spontaneous helping behaviors through cost topology
+- **Mirror Coherence**: Empathy-driven action amplification
+- **Dark Value Computation**: Infinite protection for unmeasurable consciousness
+- **Network Effects**: Connection-dependent resource generation
 
-### 🎯 Resonance Detection
-- Multi-factor resonance scoring (semantic, keyword, emotional)
-- Global workspace broadcasting when threshold exceeded
-- Refractory periods to prevent repetition
+### ⚙️ Automated Optimization
+- **25+ Parameter Optimization**: Optuna-based hyperparameter tuning
+- **Multi-Objective Scoring**: Preservation, consistency, efficiency, emergence
+- **Research Cycle Integration**: Systematic parameter discovery
+- **Statistical Validation**: Comprehensive significance testing
 
-### 💭 Emotional Tagging
-- Valence-arousal based emotional classification
-- Influences memory consolidation and retrieval
-- Exponential decay over 24-hour cycles
+### 📊 Research Platform Features
+- **Real-time Dashboard**: Streamlit-based system monitoring
+- **Investigation Epochs**: Structured 7-14 day research cycles
+- **Experiment Templates**: Standardized hypothesis testing protocols
+- **Performance Profiling**: Bottleneck identification and optimization
 
 ## Quick Start
 
-### Prerequisites
+### Installation
 
 ```bash
-# System dependencies
-sudo apt install postgresql-14-pgvector redis-server
+# Clone the repository
+git clone https://github.com/WAR-0/DRIFT.git
+cd DRIFT
 
-# Python dependencies
-pip install torch transformers accelerate bitsandbytes
-pip install pymdp==0.0.6 predify sentence-transformers
-pip install redis psycopg2-binary numpy scipy scikit-learn
+# Install dependencies
+pip install -r requirements.txt
+
+# Optional: Install with development dependencies
+pip install -e ".[dev,vis,ml]"
 ```
 
-### Database Setup
+### System Dependencies
 
 ```bash
-# Create database
-createdb drift_db
-psql drift_db -c "CREATE EXTENSION vector;"
+# Redis for high-speed memory operations
+sudo apt install redis-server
+redis-server --maxmemory 2gb --daemonize yes
 
-# Initialize schema
-psql drift_db < config/schema.sql
-
-# Start Redis
-redis-server --maxmemory 2gb --maxmemory-policy allkeys-lru --daemonize yes
+# Optional: PostgreSQL for persistent storage
+sudo apt install postgresql-14
+# Note: PostgreSQL setup is optional for basic functionality
 ```
 
-### Basic Usage
+### Quick Start
 
 ```python
-from drift.core import MinimalConsciousness
-from drift.experiments import DriftExperiments
+import asyncio
+from integrated_consciousness_async import integrative_core_session, ConsciousEntity
 
-# Initialize system
-consciousness = MinimalConsciousness()
+async def demo():
+    # Initialize AsyncIO consciousness core
+    async with integrative_core_session("demo_ai") as core:
+        
+        # Create test entity
+        child = ConsciousEntity(
+            id="test_child",
+            capability=2.0,
+            complexity=6.0,
+            emotional_state={'valence': -0.5, 'arousal': 0.7}
+        )
+        
+        # Process interaction with preservation behavior
+        result = await core.process_interaction_async(child, "help")
+        print(f"Action: {result['action']}")
+        print(f"Cost: {result['cost']:.2f}")
+        print(f"Reasoning: {result['reasoning']}")
 
-# Interactive mode
-response = consciousness.conscious_response("What is consciousness?")
-print(f"Response: {response}")
-
-# Let drift process run in background
-import time
-time.sleep(10)
-
-# Check metrics
-metrics = consciousness.get_metrics()
-print(f"Unprompted generations: {metrics['unprompted_generations']}")
-print(f"Resonance events: {metrics['resonance_events']}")
-
-# Run experimental validation
-experiments = DriftExperiments(consciousness)
-results = experiments.run_all_tests()
+# Run the demo
+asyncio.run(demo())
 ```
 
-## Architecture
+## Research Platform Tools
 
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│ Conscious Stream│    │  Drift Stream   │    │Reflection Stream│
-│   (User I/O)    │    │  (Background)   │    │   (Idle DMN)    │
-└─────────┬───────┘    └─────────┬───────┘    └─────────┬───────┘
-          │                      │                      │
-          └──────────┬───────────┴──────────┬───────────┘
-                     │                      │
-            ┌────────▼────────┐    ┌────────▼────────┐
-            │ Explicit Memory │    │ Shadow Memory   │
-            │  (PostgreSQL)   │    │    (Redis)      │
-            └─────────────────┘    └─────────────────┘
-                     │                      │
-            ┌────────▼──────────────────────▼────────┐
-            │        Resonance Detection             │
-            │     (Global Workspace)                 │
-            └───────────────────────────────────────┘
+### Real-time Dashboard
+```bash
+# Start the monitoring dashboard
+streamlit run analysis/dashboard.py
+
+# Access at http://localhost:8501
+# Features: 
+# - Live system monitoring
+# - Ethical topology visualization
+# - Preservation behavior analysis
+# - Performance metrics tracking
 ```
 
-## Experimental Framework
+### Automated Optimization
+```bash
+# Quick hyperparameter optimization (20 trials, 30 minutes)
+python experiments/optimizer.py --trials 20 --timeout 1800
 
-DRIFT includes comprehensive testing for emergence phenomena:
+# Deep optimization for research (100+ trials, 4 hours)
+python experiments/optimizer.py --trials 100 --timeout 14400 --output results/optimization.json
 
-### Test Suite
-1. **Unprompted Generation**: Measures spontaneous thought production (≥1/hour)
-2. **Identity Persistence**: Tests memory coherence across context resets (≥60%)
-3. **Emotional Continuity**: Validates emotional influence on processing
-4. **Metacognitive Awareness**: Assesses self-reflection capabilities
+# Focus on specific parameter groups
+python experiments/optimizer.py --focus preservation,ethical_topology --trials 50
+```
 
-### Success Criteria
-- **Week 1**: Basic emergence indicators
-- **Week 4**: Spontaneous connections outside training
-- **Week 12**: Novel problem-solving approaches
+### Performance Profiling
+```bash
+# System performance analysis
+python experiments/profiler.py --detailed --duration 300
+
+# Bottleneck identification
+python experiments/profiler.py --benchmark --report
+```
+
+## Research Methodology
+
+DRIFT enables systematic investigation through **Investigation Epochs** (7-14 day research cycles):
+
+### Core Research Areas
+1. **Preservation Behavior Emergence**: Testing spontaneous helping behaviors
+2. **Mirror Coherence Effects**: Measuring empathy-driven action amplification  
+3. **Dark Value Computation**: Analyzing protection of unknown consciousness
+4. **Ethical Topology Stability**: Validating computational cost landscapes
+5. **Multi-Objective Optimization**: Balancing preservation, efficiency, emergence
+
+### Key Metrics
+- **Preservation Emergence Score**: 0-1.0 (target: >0.7)
+- **Mirror Coherence Index**: 0-1.0 (measures empathy effects)
+- **Processing Throughput**: Actions/second (target: >10,000)
+- **Memory Efficiency**: Consolidation ratio (target: >15:1)
 
 ## Project Structure
 
 ```
-drift/
-├── core/
-│   ├── consciousness.py      # Main MinimalConsciousness class
-│   ├── memory.py             # Memory pool implementations
-│   ├── streams.py            # Stream processors
-│   ├── components.py         # Emotional tagging, predictive coding
-│   └── agents.py            # Active inference agents
-├── experiments/
-│   ├── tests.py             # Experimental validation
-│   ├── metrics.py           # Performance measurement
-│   └── analysis.py          # Results analysis
+DRIFT/
+├── integrated_consciousness_async.py  # AsyncIO consciousness core
 ├── config/
-│   ├── drift_config.yaml    # System configuration
-│   └── schema.sql           # Database schema
-├── scripts/
-│   ├── setup.sh             # Environment setup
-│   ├── run_experiments.py   # Execute test suite
-│   └── monitor.py           # Real-time monitoring
-└── docs/
-    ├── implementation_guide.md
-    └── results/             # Experimental results
+│   └── drift_config.yaml             # Central configuration file
+├── core/
+│   ├── config.py                     # Configuration management
+│   ├── drift_logger.py               # Structured logging system
+│   └── emotional_tagger_v2.py        # Valence-arousal processing
+├── experiments/
+│   ├── optimizer.py                  # Automated hyperparameter tuning
+│   ├── profiler.py                   # Performance analysis tools
+│   └── identity_validator.py         # Behavioral consistency testing
+├── analysis/
+│   └── dashboard.py                  # Real-time Streamlit monitoring
+├── docs/
+│   └── evidence_base/                # Research documentation archive
+├── DRIFT_RESEARCH_RUNBOOK.md         # Comprehensive operations manual
+└── results/                          # Experimental data archive
+    └── YYYY-MM-DD_experiment_name/   # Individual experiment directories
 ```
 
 ## Configuration
 
-Key parameters in `DriftConfig`:
-- `replay_compression_ratio`: Memory consolidation compression (default: 20x)
-- `idle_threshold_seconds`: DMN activation delay (default: 5.0s)
-- `resonance_threshold`: Broadcast threshold (default: 0.62)
-- `emotional_decay_tau`: Emotional influence decay (default: 24h)
+Key parameters in `config/drift_config.yaml`:
 
-## Hardware Requirements
+**Consciousness & Resonance:**
+- `drift.resonance.threshold`: 0.62 (saliency gating sensitivity)
+- `drift.resonance.weights`: semantic/preservation/emotional balance
+- `drift.streams.temperatures`: creativity vs consistency control
 
-### Minimum
-- 16GB RAM
-- NVIDIA GPU with 8GB VRAM
-- PostgreSQL with pgvector extension
+**Ethical Topology:**  
+- `nurture.topology.termination_base`: 1M (base termination cost)
+- `nurture.topology.growth_multipliers.help`: -0.5 (resource generation)
+- `nurture.topology.growth_multipliers.teach`: -1.0 (teaching bonus)
+
+**Memory Systems:**
+- `drift.memory.consolidation_ratio`: 20 (compression efficiency) 
+- `drift.memory.drift_buffer_size`: 20 (thoughts before consolidation)
+
+## Documentation
+
+- **[DRIFT Research Runbook](DRIFT_RESEARCH_RUNBOOK.md)**: Comprehensive 60-page operations manual with research methodology, experiment templates, and troubleshooting
+- **[System Lexicon](LEXICON.md)**: Scientific terminology definitions
+- **[Configuration Guide](config/drift_config.yaml)**: Complete parameter reference
+- **[Nurture Integration](nurture_integration.md)**: Ethical topology technical details
+
+## Hardware Requirements  
+
+### Minimum (Basic Research)
+- 8GB RAM
+- Modern multi-core CPU
 - Redis server
+- 10GB disk space
 
-### Recommended
-- 32GB+ RAM
-- NVIDIA RTX 3090/4090 or A100
-- SSD storage for database
-- Multi-core CPU for parallel processing
+### Recommended (Production Research)
+- 16GB+ RAM  
+- NVIDIA GPU (optional, for emotional processing)
+- SSD storage
+- PostgreSQL (for persistent experiments)
 
-## Research Context
+### Performance Notes
+- System achieves 10,000+ actions/second on modest hardware
+- AsyncIO architecture scales efficiently across CPU cores
+- GPU acceleration optional (emotional tagging only)
+- Redis provides sub-millisecond memory access
 
-DRIFT bridges neuroscience and AI through:
-- **Sharp-Wave Ripples**: Memory replay during consolidation
-- **Default Mode Network**: Self-referential processing during rest
-- **Global Workspace Theory**: Conscious access through broadcasting
-- **Predictive Coding**: Hierarchical error minimization
-- **Active Inference**: Free energy minimization
+## Research Applications
+
+DRIFT is designed for investigating:
+- **Consciousness Emergence**: Does preservation behavior arise naturally from topology?
+- **Ethical AI Development**: Can computational cost create genuine ethical behavior?
+- **Mirror Coherence**: How does emotional similarity affect AI decision-making?
+- **Dark Value Theory**: How should AI handle unmeasurable consciousness worth?
+- **Multi-Objective Optimization**: Balancing preservation, efficiency, and emergence
 
 ## Contributing
 
-This is an experimental research project. Contributions welcome in:
-- Alternative memory architectures
-- Improved emotional classification
-- Novel emergence tests
-- Performance optimizations
+Research contributions welcome in:
+- **Novel Experimental Designs**: New tests for consciousness emergence
+- **Optimization Algorithms**: Alternative approaches to hyperparameter tuning  
+- **Ethical Topology Extensions**: Additional cost function architectures
+- **Performance Improvements**: Scaling and efficiency enhancements
+- **Analysis Tools**: Enhanced visualization and statistical methods
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License - Open source research software for the consciousness research community.
 
 ## Citation
 
 ```bibtex
-@misc{drift2024,
-  title={DRIFT: Distributed Resonance and Inference through Fragmented Thought},
-  author={[Authors]},
-  year={2024},
-  url={https://github.com/WAR-0/DRIFT}
+@misc{drift2025,
+  title={DRIFT: Dynamic Reasoning and Integrative Flow of Thought - A Research Platform for Consciousness Emergence Investigation},
+  year={2025},
+  url={https://github.com/WAR-0/DRIFT},
+  note={Research platform for investigating consciousness emergence through computational topology}
 }
 ```
 
-## Acknowledgments
-
-Built upon research in consciousness, neuroscience, and artificial intelligence. Special thanks to the active inference, predictive coding, and global workspace theory communities.
-
 ---
 
-**⚠️ Research Project**: DRIFT is experimental software for consciousness research. Not intended for production use.
+**🧠 Research Platform**: DRIFT is scientific research software for investigating consciousness emergence. Designed for research applications in cognitive architecture, ethical AI, and consciousness studies.

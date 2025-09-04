@@ -1,0 +1,86 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drift-cognitive-architecture"
+version = "1.0.0"
+description = "DRIFT: Dynamic Reasoning and Integrative Flow of Thought - A research platform for investigating consciousness emergence in AI systems"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "DRIFT Research Team"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research", 
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+keywords = ["consciousness", "cognitive-architecture", "ai-research", "async", "nurture-protocols"]
+requires-python = ">=3.8"
+dependencies = [
+    "asyncio-compat>=0.1.0",
+    "aioredis>=2.0.1", 
+    "asyncpg>=0.29.0",
+    "numpy>=1.21.0",
+    "pandas>=1.3.0",
+    "PyYAML>=6.0",
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "optuna>=3.0.0",
+    "streamlit>=1.28.0",
+    "redis>=4.0.0",
+    "psycopg2-binary>=2.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=1.0.0",
+]
+vis = [
+    "matplotlib>=3.5.0",
+    "plotly>=5.0.0",
+    "seaborn>=0.11.0",
+]
+ml = [
+    "sentence-transformers>=2.2.0",
+    "scikit-learn>=1.0.0",
+    "scipy>=1.7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/WAR-0/DRIFT"
+Repository = "https://github.com/WAR-0/DRIFT.git"
+Documentation = "https://github.com/WAR-0/DRIFT/blob/master/DRIFT_RESEARCH_RUNBOOK.md"
+Issues = "https://github.com/WAR-0/DRIFT/issues"
+
+[project.scripts]
+drift-dashboard = "analysis.dashboard:main"
+drift-optimize = "experiments.optimizer:main"
+drift-profile = "experiments.profiler:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["core*", "experiments*", "analysis*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
